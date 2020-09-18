@@ -21,15 +21,17 @@ void setup() {
   DK24=H*G2(Y1+DK13,Y2+DK23,T,Q,B,W);
   Y[0][i+1]=Y[0][i]+(DK11+2*(DK12+DK13)+DK14)/6;
   Y[1][i+1]=Y[0][i]+(DK21+2*(DK22+DK23)+DK24)/6;
-  if(abs(Y[0][i+1])<PI){
+  if(abs(Y[0][i+1])>PI){
     Y[0][i+1]=Y[0][i+1]-2*PI*abs(Y[0][i+1])/Y[0][i+1];
   }
  // if(i<999){
   println(Y[0][i+1]);
   println(Y[1][i+1]);
+  noSmooth();
+  point(i,Y[0][i+1]);
+  point(i,Y[1][i+1]);
  // }
   }
-
   
 }
 void draw(){
